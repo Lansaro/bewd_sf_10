@@ -1,0 +1,41 @@
+# vowels: [ 'a', 'e', 'i', 'o', 'u' ]
+
+# I give you a string like "elephant"
+# You print a string without the vowels, like: "*l*ph*nt"
+# And you charge me $10 per vowel, in this case: 3*10 = 30
+
+require 'pry'
+
+def vowels_leader(string)
+  letters = string.downcase.chars
+  newletters = ""
+  bug1 = 0
+  bug2 = 0
+  bug3 = 0
+  bug4 = 0
+  bug5 = 0
+  money_owned = 0
+  until letters.length == 0
+    yuppy = letters.shift.to_s
+    puts yuppy
+      if yuppy == "a"
+        bug1 = bug1 + 10
+      elsif yuppy == "e"
+        bug2 = bug2 + 10
+      elsif yuppy == "i"
+        bug3 = bug3 + 10
+      elsif yuppy == "o"
+        bug4 = bug4 + 10
+      elsif yuppy == "u"
+        bug5 = bug5 + 10
+      else
+        newletters << yuppy
+    end
+  end
+  puts new_money_owned = bug1 + bug2 + bug3 + bug4 + bug5
+  newletters
+end
+
+word = gets.chomp
+
+puts "the response is: #{ vowels_leader(word) }"

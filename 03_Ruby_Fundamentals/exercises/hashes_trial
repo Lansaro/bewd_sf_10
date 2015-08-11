@@ -1,0 +1,10 @@
+#creating
+
+def states
+  states = ["New York", "Florida", "Utah", "Washington", "California"]
+  states.each do |state|
+    puts "#{state}" if state.length > 5
+  end
+end
+
+states

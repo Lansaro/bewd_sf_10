@@ -1,0 +1,11 @@
+#method to calculate stuff
+
+def calculation(x,y,z)
+  numbers = x + y + z
+end
+
+q = gets.chomp.to_i
+w = gets.chomp.to_i
+e = gets.chomp.to_i
+
+puts calculation(q,w,e)

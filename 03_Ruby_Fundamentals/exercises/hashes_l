@@ -1,0 +1,13 @@
+require 'pry'
+
+names = ["John", "Eric", "Derek", "Stifler"]
+
+def the_names
+  names = ["John", "Eric", "Derek", "Stifler"]
+  names.each do |person|
+    puts "#{person}" if person.start_with?("S")
+  end
+end
+
+# call the method
+the_names
