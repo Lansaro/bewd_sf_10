@@ -4,10 +4,12 @@ require 'pry'
 #State & Object Factory: factory that creates and instiantes robots
 #Behavior: Collection of class methods, instance methods, instance variable, local variables, constants etc.,
 
+#the function of the instance method to provide instance of the class access to behavior
+
 class Robot
 
   #getter && setter methods for each attribute
-  attr_accessor  :name, :type, :origin
+  attr_accessor  :name, :type, :origin #attributes defined
 
   #instance variables are available through the class. @name is an instance variable
   def initialize(name, type, origin)
@@ -37,6 +39,12 @@ class Robot
     Robot.random_robot_maker
   end
 end
+
+#class method cannot be accessed by instance of the method
+#class method starts with "self.____"
+#instance method doesn't have self
+#class method is usually used when need to have access to behavior tht doesn't involce 1 instance of the class
+#use class method when - need to
 
 #class method
 def self.random_robot_maker
