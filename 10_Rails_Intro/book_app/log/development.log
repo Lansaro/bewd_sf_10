@@ -1,0 +1,549 @@
+  [1m[36m (1.2ms)[0m  [1mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL) [0m
+  [1m[35m (0.6ms)[0m  select sqlite_version(*)
+  [1m[36m (1.2ms)[0m  [1mCREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+Migrating to CreateBooks (20150901025003)
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (1.0ms)[0m  CREATE TABLE "books" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "author" varchar, "year_published" integer, "genre" varchar, "available" boolean, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) 
+  [1m[36mSQL (0.2ms)[0m  [1mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20150901025003"]]
+  [1m[35m (0.8ms)[0m  commit transaction
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+
+
+Started GET "/" for ::1 at 2015-08-31 20:11:20 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.7ms)
+Completed 200 OK in 33ms (Views: 13.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/routes" for ::1 at 2015-08-31 20:13:39 -0700
+
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (34.7ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (6.6ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (177.8ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:18:39 -0700
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (1.4ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (19.5ms)
+Completed 200 OK in 2280ms (Views: 2263.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/scaffolds.self-41c0246c15bb29468da6994deda5e725ee5c2f0f163c34c9ecec0ceea7fe9439.css?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-31 20:18:42 -0700
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:19:57 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (76.7ms)
+  Rendered books/new.html.erb within layouts/application (83.3ms)
+Completed 200 OK in 199ms (Views: 164.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-31 20:21:03 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.6ms)
+Completed 200 OK in 19ms (Views: 10.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-08-31 20:21:07 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 5ms (Views: 4.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/route" for ::1 at 2015-08-31 20:21:10 -0700
+
+ActionController::RoutingError (No route matches [GET] "/route"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.7ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (2.2ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.6ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (119.3ms)
+
+
+Started GET "/routes" for ::1 at 2015-08-31 20:21:59 -0700
+
+ActionController::RoutingError (No route matches [GET] "/routes"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.8ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (3.4ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (4.3ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (7.6ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (154.5ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:25:18 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (16.3ms)
+  Rendered books/new.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 124ms (Views: 115.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:26:53 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"/Sh+QvKHdfeMWaKIwDK8FDgou6ozqJclC9gLHvF0kRn6RMSeK3pcaXmJK5cN1m3l+YateIBGGxGNIx+/K3NiOg==", "book"=>{"title"=>"Pyramid Principle", "author"=>"Jerry", "year_published"=>"1985", "genre"=>"Publishing", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[36m (0.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (6.8ms)[0m  INSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Pyramid Principle"], ["author", "Jerry"], ["year_published", 1985], ["genre", "Publishing"], ["available", "t"], ["created_at", "2015-09-01 03:26:53.163392"], ["updated_at", "2015-09-01 03:26:53.163392"]]
+  [1m[36m (1.9ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/1
+Completed 302 Found in 94ms (ActiveRecord: 9.5ms)
+
+
+Started GET "/books/1" for ::1 at 2015-08-31 20:26:53 -0700
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBook Load (0.5ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 1]]
+  Rendered books/show.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 273ms (Views: 215.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:26:55 -0700
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.3ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 65ms (Views: 64.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:26:57 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (11.2ms)
+  Rendered books/new.html.erb within layouts/application (17.0ms)
+Completed 200 OK in 115ms (Views: 113.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:28:03 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cOcY6rPy3f567QVInXLWNeqjD0BTQarmYAyF2Bca7vp3i6I2ag/0YI89jFdQlgfEKw0ZkuCvJtLm95F5zR0d2Q==", "book"=>{"title"=>"Atlant shrugges", "author"=>"M.C.K.", "year_published"=>"1987", "genre"=>"Story", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[35m (0.9ms)[0m  begin transaction
+  [1m[36mSQL (1.3ms)[0m  [1mINSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Atlant shrugges"], ["author", "M.C.K."], ["year_published", 1987], ["genre", "Story"], ["available", "t"], ["created_at", "2015-09-01 03:28:03.091318"], ["updated_at", "2015-09-01 03:28:03.091318"]]
+  [1m[35m (1.3ms)[0m  commit transaction
+Redirected to http://localhost:3000/books/2
+Completed 302 Found in 37ms (ActiveRecord: 3.5ms)
+
+
+Started GET "/books/2" for ::1 at 2015-08-31 20:28:03 -0700
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 2]]
+  Rendered books/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 351ms (Views: 348.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:28:05 -0700
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (3.3ms)
+Completed 200 OK in 70ms (Views: 69.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:29:37 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (13.2ms)
+  Rendered books/new.html.erb within layouts/application (17.3ms)
+Completed 200 OK in 163ms (Views: 149.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:33:54 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XxrUZfAUtEKevLLGAMlrCFNLPc2lPV9UIpzmLb0esTVYdm65Kemd3GtsO9nNLbr5kuUrHxbT02CkZ/KMZxlCFg==", "book"=>{"title"=>"Apple", "author"=>"Jobs", "year_published"=>"1999", "genre"=>"Business", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[36m (5.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (5.6ms)[0m  INSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Apple"], ["author", "Jobs"], ["year_published", 1999], ["genre", "Business"], ["available", "t"], ["created_at", "2015-09-01 03:39:48.843204"], ["updated_at", "2015-09-01 03:39:48.843204"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/3
+Completed 302 Found in 354695ms (ActiveRecord: 15.1ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:39:49 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XxrUZfAUtEKevLLGAMlrCFNLPc2lPV9UIpzmLb0esTVYdm65Kemd3GtsO9nNLbr5kuUrHxbT02CkZ/KMZxlCFg==", "book"=>{"title"=>"Apple", "author"=>"Jobs", "year_published"=>"1999", "genre"=>"Business", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[35m (1.1ms)[0m  begin transaction
+  [1m[36mSQL (2.2ms)[0m  [1mINSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)[0m  [["title", "Apple"], ["author", "Jobs"], ["year_published", 1999], ["genre", "Business"], ["available", "t"], ["created_at", "2015-09-01 03:39:50.910519"], ["updated_at", "2015-09-01 03:39:50.910519"]]
+  [1m[35m (2.5ms)[0m  commit transaction
+Redirected to http://localhost:3000/books/4
+Completed 302 Found in 376ms (ActiveRecord: 12.7ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:39:51 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XxrUZfAUtEKevLLGAMlrCFNLPc2lPV9UIpzmLb0esTVYdm65Kemd3GtsO9nNLbr5kuUrHxbT02CkZ/KMZxlCFg==", "book"=>{"title"=>"Apple", "author"=>"Jobs", "year_published"=>"1999", "genre"=>"Business", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[36m (1.4ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (2.1ms)[0m  INSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Apple"], ["author", "Jobs"], ["year_published", 1999], ["genre", "Business"], ["available", "t"], ["created_at", "2015-09-01 03:39:51.218375"], ["updated_at", "2015-09-01 03:39:51.218375"]]
+  [1m[36m (1.8ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/5
+Completed 302 Found in 176ms (ActiveRecord: 5.3ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:39:51 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (140.0ms)
+  Rendered books/new.html.erb within layouts/application (150.7ms)
+Completed 200 OK in 1291ms (Views: 1268.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:39:52 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (108.9ms)
+  Rendered books/new.html.erb within layouts/application (118.0ms)
+Completed 200 OK in 1119ms (Views: 1109.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:39:54 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (106.6ms)
+  Rendered books/new.html.erb within layouts/application (125.8ms)
+Completed 200 OK in 1156ms (Views: 1135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:39:55 -0700
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (1.5ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (164.4ms)
+Completed 200 OK in 1025ms (Views: 996.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:39:56 -0700
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (10.9ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (105.2ms)
+Completed 200 OK in 864ms (Views: 836.3ms | ActiveRecord: 10.9ms)
+
+
+Started GET "/route" for ::1 at 2015-08-31 20:39:57 -0700
+
+ActionController::RoutingError (No route matches [GET] "/route"):
+  actionpack (4.2.4) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.4) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.4) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.4) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.4) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.4) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.4) lib/action_dispatch/middleware/static.rb:116:in `call'
+  rack (1.6.4) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.4) lib/rails/engine.rb:518:in `call'
+  railties (4.2.4) lib/rails/application.rb:165:in `call'
+  rack (1.6.4) lib/rack/lock.rb:17:in `call'
+  rack (1.6.4) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.4) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (35.5ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_route.html.erb (22.2ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/routes/_table.html.erb (24.3ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (23.4ms)
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/actionpack-4.2.4/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (382.0ms)
+
+
+Started GET "/books/2" for ::1 at 2015-08-31 20:39:58 -0700
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mBook Load (0.9ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 2]]
+  Rendered books/show.html.erb within layouts/application (18.7ms)
+Completed 200 OK in 743ms (Views: 716.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2015-08-31 20:39:58 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.5ms)
+Completed 200 OK in 20ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:39:58 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (75.0ms)
+  Rendered books/new.html.erb within layouts/application (81.3ms)
+Completed 200 OK in 644ms (Views: 638.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:39:59 -0700
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.7ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (41.2ms)
+Completed 200 OK in 434ms (Views: 427.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/scaffolds.self-41c0246c15bb29468da6994deda5e725ee5c2f0f163c34c9ecec0ceea7fe9439.css?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-31 20:40:00 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-31 20:40:01 -0700
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:40:31 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (2.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (20.8ms)
+Completed 200 OK in 412ms (Views: 394.4ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/assets/scaffolds.self-41c0246c15bb29468da6994deda5e725ee5c2f0f163c34c9ecec0ceea7fe9439.css?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/books.self-e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855.css?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/books.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/application.self-e80e8f2318043e8af94dddc2adad5a4f09739a8ebb323b3ab31cd71d45fd9113.css?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/application.self-3b8dabdc891efe46b9a144b400ad69e37d7e5876bdc39dee783419a69d7ca819.js?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/jquery.self-d03a5518f45df77341bdbe6201ba3bfa547ebba8ed64f0ea56bfa5f96ea7c074.js?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/jquery_ujs.self-ca5248a2fad13d6bd58ea121318d642f195f0b2dd818b30615f785ff365e8d1f.js?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/assets/turbolinks.self-c37727e9bd6b2735da5c311aa83fead54ed0be6cc8bd9a65309e9c5abe2cbfff.js?body=1" for ::1 at 2015-08-31 20:40:32 -0700
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:40:34 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (38.4ms)
+  Rendered books/new.html.erb within layouts/application (55.6ms)
+Completed 200 OK in 226ms (Views: 225.1ms | ActiveRecord: 0.0ms)
+
+
+Started DELETE "/books/4" for ::1 at 2015-08-31 20:40:40 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mIHSjRfRGg3yaPzSnuP4mcHV/RyXOE0dcvdrGc4YF8if7WhRziwzkwe4dc1TByloAHvrziTWwSn0DH+4FB/k6w==", "id"=>"4"}
+  [1m[36mBook Load (0.4ms)[0m  [1mSELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1[0m  [["id", 4]]
+  [1m[35m (0.2ms)[0m  begin transaction
+  [1m[36mSQL (0.8ms)[0m  [1mDELETE FROM "books" WHERE "books"."id" = ?[0m  [["id", 4]]
+  [1m[35m (1.4ms)[0m  commit transaction
+Redirected to http://localhost:3000/books
+Completed 302 Found in 63ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:40:40 -0700
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (0.2ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 75ms (Views: 73.6ms | ActiveRecord: 0.2ms)
+
+
+Started DELETE "/books/5" for ::1 at 2015-08-31 20:40:42 -0700
+Processing by BooksController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y0Pa/8WKv6ZqvYZqCh4NP7i9is/gWSl7mGa+r9X4em7ML2AjHHeWOJ9tD3XH+tzOeROcHVO3pU8enaoOD/+JTQ==", "id"=>"5"}
+  [1m[35mBook Load (0.1ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 5]]
+  [1m[36m (0.5ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (0.4ms)[0m  DELETE FROM "books" WHERE "books"."id" = ?  [["id", 5]]
+  [1m[36m (2.2ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books
+Completed 302 Found in 6ms (ActiveRecord: 3.1ms)
+
+
+Started GET "/books" for ::1 at 2015-08-31 20:40:42 -0700
+Processing by BooksController#index as HTML
+  [1m[35mBook Load (0.3ms)[0m  SELECT "books".* FROM "books"
+  Rendered books/index.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 115ms (Views: 114.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/books/new" for ::1 at 2015-08-31 20:41:07 -0700
+Processing by BooksController#new as HTML
+  Rendered books/_form.html.erb (4.9ms)
+  Rendered books/new.html.erb within layouts/application (7.6ms)
+Completed 200 OK in 81ms (Views: 79.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/books" for ::1 at 2015-08-31 20:41:51 -0700
+Processing by BooksController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6/xWzD+HgL27PPQF8RjV0bj+X4satD06Ek0zXhN8ShDskOwQ5nqpI07sfRo8/AQgeVBJWalasQ6Utif/yXu5Mw==", "book"=>{"title"=>"Hard to be God", "author"=>"Strugatsky", "year_published"=>"1986", "genre"=>"Fanatsy", "available"=>"1"}, "commit"=>"Create Book"}
+  [1m[36m (1.8ms)[0m  [1mbegin transaction[0m
+  [1m[35mSQL (4.9ms)[0m  INSERT INTO "books" ("title", "author", "year_published", "genre", "available", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?)  [["title", "Hard to be God"], ["author", "Strugatsky"], ["year_published", 1986], ["genre", "Fanatsy"], ["available", "t"], ["created_at", "2015-09-01 03:41:51.902461"], ["updated_at", "2015-09-01 03:41:51.902461"]]
+  [1m[36m (1.5ms)[0m  [1mcommit transaction[0m
+Redirected to http://localhost:3000/books/6
+Completed 302 Found in 55ms (ActiveRecord: 8.2ms)
+
+
+Started GET "/books/6" for ::1 at 2015-08-31 20:41:51 -0700
+Processing by BooksController#show as HTML
+  Parameters: {"id"=>"6"}
+  [1m[35mBook Load (0.2ms)[0m  SELECT  "books".* FROM "books" WHERE "books"."id" = ? LIMIT 1  [["id", 6]]
+  Rendered books/show.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 103ms (Views: 100.2ms | ActiveRecord: 0.2ms)
+
+
+Started GET "/books/" for ::1 at 2015-08-31 20:59:35 -0700
+Processing by BooksController#index as HTML
+  [1m[36mBook Load (1.9ms)[0m  [1mSELECT "books".* FROM "books"[0m
+  Rendered books/index.html.erb within layouts/application (53.8ms)
+Completed 200 OK in 235ms (Views: 200.7ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 13:57:11 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.1ms)
+Completed 200 OK in 27ms (Views: 14.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 13:57:26 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.1ms)
+Completed 200 OK in 4ms (Views: 3.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 13:59:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (3.4ms)
+Completed 200 OK in 32ms (Views: 17.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 13:59:43 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.9ms | ActiveRecord: 0.0ms)
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+
+
+Started GET "/" for ::1 at 2015-09-02 14:00:38 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (2.5ms)
+Completed 200 OK in 26ms (Views: 14.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 14:00:40 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 3ms (Views: 2.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2015-09-02 14:00:42 -0700
+Processing by Rails::WelcomeController#index as HTML
+  Rendered /Users/Leo/.rvm/rubies/ruby-2.2.1/lib/ruby/gems/2.2.0/gems/railties-4.2.4/lib/rails/templates/rails/welcome/index.html.erb (0.0ms)
+Completed 200 OK in 2ms (Views: 2.0ms | ActiveRecord: 0.0ms)
