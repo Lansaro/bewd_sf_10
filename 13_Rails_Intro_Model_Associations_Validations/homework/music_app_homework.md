@@ -10,7 +10,7 @@
   * What associations are needed?
   * UX Design?
 
-##Part 1 - Song & Artist MVC Resources
+##Part 1 - Song & Artist Feature
 Start with 2 models: Song and Artist.  
 
 * Song belongs to artist
@@ -25,7 +25,7 @@ A user should be able to:
 * Add a new song and associate it with an artist
 * Edit and Delete songs and artists
 
-##Part 2 - Review Resource
+##Part 2 - Review Feature
 * Add a review model.
 * Song `has_many` reviews
 * Artist `has_many` reviews
@@ -48,16 +48,16 @@ A user should be able to:
 * App should have navigation bar that allows users to find artists and songs.
 * App should use button and tables from bootstrap library
 
-Google Fonts
+###Google Fonts
 
 * App should have at least on custom font integrated. Free Fonts are available via google fonts
   * [Google Fonts](https://www.google.com/fonts)  
 
-Integrate SimpleForm
+###Integrate `Simple_Form`
 
 * [Simple Form](https://github.com/plataformatec/simple_form)
 * [Review Simple Form Documentation](http://simple-form.plataformatec.com.br)
-* Use simple_form logic instead of form_tag logic within the view layer
+* Use simple_form within the view layer
 
 
 ##Part 4 - Search, Favorite, Follow Features
