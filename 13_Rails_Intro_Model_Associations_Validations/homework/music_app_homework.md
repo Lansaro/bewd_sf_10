@@ -1,4 +1,5 @@
-#Homework: BEWDful Music App - Part 1 thru 3 are due on Monday 9/21!! ****
+#Homework: BEWDful Music App:
+#Part 1 thru 3 are due Monday 9/21 ****
 
 ##Part 0 - Schema & UX Design
 
@@ -77,3 +78,17 @@ Integrate SimpleForm
 
  * Integrate the Spotify API as a source for artist, album, song and genre data
    -This may require that you rework/rethink of your schema and extensive refactoring your app (which is a rite of passage for all developers)
+
+
+#Resources - Mandatory Reading
+
+* [Active Record Basics](http://guides.rubyonrails.org/active_record_basics.html)
+* [Active Record Associations](http://guides.rubyonrails.org/association_basics.htm)
+* [Active Record Validations](http://guides.rubyonrails.org/active_record_validations.html)
+* [Active Record Migrations ](http://guides.rubyonrails.org/active_record_migrations.html)
+
+
+#Resources - Optional
+* [Code School: Blasting Off with Bootstrap](https://www.codeschool.com/courses/blasting-off-with-bootstrap)
+* [Rails for Zombies - Redux](https://www.codeschool.com/courses/rails-for-zombies-2)
+*
