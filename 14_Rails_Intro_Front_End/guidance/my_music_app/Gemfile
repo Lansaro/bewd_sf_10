@@ -1,12 +1,8 @@
 source 'https://rubygems.org'
 
-<<<<<<< HEAD
-gem 'rails', '4.2.4'
-=======
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.3'
->>>>>>> 091e6e8513c8b0f609d01077160aed1a12e6ede4
 gem 'sqlite3'
 gem 'sass-rails', '~> 5.0'
 gem 'uglifier', '>= 1.3.0'
@@ -18,17 +14,10 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 group :development, :test do
   gem 'byebug'
-<<<<<<< HEAD
-  gem 'spring'
-=======
->>>>>>> 091e6e8513c8b0f609d01077160aed1a12e6ede4
   gem 'pry-rails'
   gem 'pry-byebug'
   gem 'binding_of_caller'
   gem 'better_errors'
   gem 'annotate'
-<<<<<<< HEAD
-=======
   gem 'spring'
->>>>>>> 091e6e8513c8b0f609d01077160aed1a12e6ede4
 end
