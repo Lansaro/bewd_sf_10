@@ -1,3 +1,25 @@
 @import "bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+
+/* Fonts */
+@import url(https://fonts.googleapis.com/css?family=Lora:400,400italic,700,700italic);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+@import url(https://fonts.googleapis.com/css?family=Homemade+Apple);
+@import url(https://fonts.googleapis.com/css?family=Expletus+Sans:400,400italic,500,500italic,600,600italic,700,700italic);
+
+.lora_font {
+  font-family: 'Montserrat', sans-serif;
+}
+
+.montserrat_font {
+  font-family: 'Lora', serif;
+}
+
+.apple_font {
+  font-family: 'Homemade Apple', cursive;
+}
+
+.expletus_font {
+  font-family: 'Expletus Sans', cursive;
+}
